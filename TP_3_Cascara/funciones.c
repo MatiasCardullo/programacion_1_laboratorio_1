@@ -228,7 +228,7 @@ int getId(EMovie* lista, int posicion){
 //LISTAR PELICULAS
 
 void listMovies(EMovie* movie){
-    printf("\n\tTitle\t\t\tGenre\t\tMIN\t\tCAL\t\tID\n");
+    printf("\n\tTitulo\t\t\tGenero\t\tDuracion\t\tPuntaje\t\tID\n");
     printf("__________________________________________________________________________________________\n");
     for(int i=0;i<CANTIDAD;i++){
         if(getState(movie,i)){
