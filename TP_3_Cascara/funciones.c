@@ -58,9 +58,9 @@ void askDuration(EMovie* movie,int index){
 }
 
 void askDescription(EMovie* movie,int index){
-    char aux[200];
+    char aux[1000];
     printf("\nIngrese descripcion: ");
-    getString(aux,300);
+    getString(aux,1000);
     if(setDescription(movie,aux,index)==1)
         {setDescription(movie,aux,index);}
 }
@@ -228,13 +228,13 @@ int getId(EMovie* lista, int posicion){
 //LISTAR PELICULAS
 
 void listMovies(EMovie* movie){
-    printf("\n\tTitulo\t\t\tGenero\t\tDuracion\t\tPuntaje\t\tID\n");
+    printf("\n\t\tTitulo\t\t\tGenero\t\tDuracion\tPuntaje\t     ID\n");
     printf("__________________________________________________________________________________________\n");
     for(int i=0;i<CANTIDAD;i++){
         if(getState(movie,i)){
             char title[100];getTitle(movie,i,title);
             char genre[100];getGenre(movie,i,genre);
-            printf(" %s\t\t\t%s\t\t%d\t\t%d\t\t%d\n\n",title,genre,getDuration(movie,i),getScore(movie,i),getId(movie,i));
+            printf(" %35s   %12s\t%7d\t\t%7d\t%7d\n\n",title,genre,getDuration(movie,i),getScore(movie,i),getId(movie,i));
         }
     }printf("__________________________________________________________________________________________\n");
 }
@@ -371,7 +371,7 @@ void createHtml(EMovie* movie){
     FILE* archivo;
     char titulo[100];
     char genero[100];
-    char descripcion[200];
+    char descripcion[1000];
     char imagen[200];
     int duracion,puntaje;
     archivo = fopen("index.html","w");

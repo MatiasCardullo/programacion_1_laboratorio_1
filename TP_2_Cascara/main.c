@@ -26,11 +26,11 @@ int main(){
                 agregaPersona(lista,E,libre);
             }break;
         case 2:
-            borrarPersona(lista,E);
+            borrarPersona(lista);
             break;
         case 3:
-            ordenarPersona(lista,E);
-            mostrarPersona(lista,E);
+            ordenarPersona(lista);
+            mostrarPersona(lista);
             break;
         case 4:
             graficarPersona(lista,E);
